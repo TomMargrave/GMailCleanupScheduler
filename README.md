@@ -1,55 +1,42 @@
-# GMailCleanupScheduler
-Gmail Label Cleaner is a Google Apps Script designed to automate the deletion of old emails within specific Gmail labels. It allows users to set customizable time thresholds for automatic email cleanup, facilitating efficient label management and decluttering of email archives.
+# Gmail Label Cleaner
 
-Certainly! Here's a step-by-step guide to installing this code in Google Drive and configuring it to run on a schedule using Google Apps Script:
+Gmail Label Cleaner is a Google Apps Script that automates the deletion of old emails within specific Gmail labels. This script helps manage and declutter your Gmail inbox by allowing customized time thresholds for automatic email cleanup.
 
-### Installing Code in Google Drive:
+## Features
 
-1. **Access Google Drive:**
-   - Go to [Google Drive](https://drive.google.com/) and sign in with your Google account.
+- **Automated Email Cleanup:** Deletes old emails based on specified label names and time thresholds.
+- **Customizable Thresholds:** Set days thresholds to manage the age of emails for deletion.
+- **Flexible Label Management:** Enables targeted label-based cleanup for better email organization.
 
-2. **Create a New Script:**
-   - Click on the "+ New" button.
-   - Go to "More" and select "Google Apps Script". This will open the Google Apps Script editor.
+## Installation and Setup
 
-3. **Copy and Paste Code:**
-   - Copy the code provided earlier.
-   - Paste the code into the Apps Script editor.
+1. **Google Drive:**
+   - Open Google Drive and create a new Google Apps Script.
+   - Copy the code provided in the `code.gs` file into your script.
 
-4. **Save the Script:**
-   - Click on "File" > "Save" to save the script.
-   - Give your script a name and click "OK".
+2. **Configuration:**
+   - Customize the script by specifying label names and days thresholds in the `deleteOldEmails` function.
+   
+3. **Authorization:**
+   - Run the script to authorize access to your Gmail account and grant necessary permissions.
 
-### Configuring to Run on Schedule:
+4. **Schedule Execution:**
+   - Configure the script to run on a schedule using Google Apps Script triggers.
 
-Now, to configure the script to run on a schedule:
+## Usage
 
-1. **Open Script Editor:**
-   - In the Apps Script editor, click on the clock icon (Triggers) in the toolbar.
+- Run the `cleanLBL` function to initiate the automated email cleanup process.
 
-2. **Create a New Trigger:**
-   - Click on the "+ Add Trigger" button at the bottom right corner.
+## Example
 
-3. **Configure Trigger Settings:**
-   - Choose the function to run (`cleanLBL` in this case).
-   - Choose event source as "Time-driven".
-   - Select how often you want the script to run (e.g., daily, weekly, etc.).
-   - Set the time you want the script to run.
+Here's an example of usage in the script:
 
-4. **Save Trigger:**
-   - Click on "Save".
+```javascript
+// Deleting emails older than 7 days from "zz/z010 days" label
+deleteOldEmails("zz/z010 days", 7);
 
-### Authorization and Permissions:
+// Deleting emails older than 90 days from any label
+deleteOldEmails("zz/z090 days", 90);
 
-When you first run the script or set up the trigger, it may ask for authorization to access your Gmail and other services. Follow the prompts to grant the necessary permissions for the script to access and manage your Gmail account.
-
-### Verification:
-
-After setting up the trigger, the script will automatically execute at the scheduled time. You can check the Google Apps Script dashboard for execution logs and verify if the script is running successfully.
-
-### Notes:
-
-- Ensure that the Gmail account you're using with this script has the necessary permissions to access the labels and perform actions like moving emails to trash.
-- Regularly check the script's execution logs and Gmail to ensure it's working as intended.
-
-This should guide you through installing the code into Google Drive and setting it up to run on a schedule using Google Apps Script. If you encounter any issues or need further clarification, feel free to ask!
+// Deleting emails older than 365 days from "zz/z365 days" label
+deleteOldEmails("zz/z365 days", 365);
