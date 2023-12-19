@@ -1,6 +1,6 @@
-# Gmail Label Cleaner
+# GMail Cleanup Scheduler
 
-Gmail Label Cleaner is a Google Apps Script that automates the deletion of old emails within specific Gmail labels. This script helps manage and declutter your Gmail inbox by allowing customized time thresholds for automatic email cleanup.
+GMail Cleanup Scheduler is a Google Apps Script that automates the deletion of old emails within specific Gmail labels. This script helps manage and declutter your Gmail inbox by allowing customized time thresholds for automatic email cleanup.
 
 ## Features
 
